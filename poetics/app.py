@@ -1,9 +1,8 @@
 
 
 from flask import Flask
-from flask_migrate import Migrate
 
-from .extensions import db
+from .extensions import db, migrate
 from .models import *
 
 
@@ -13,7 +12,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
 db.init_app(app)
-migrate = Migrate(app, db)
+migrate.init_app(app, db)
 
 
 @app.route('/')
