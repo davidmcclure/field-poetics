@@ -22,7 +22,3 @@ class Text(db.Model):
 @app.route('/')
 def test():
     return 'Field Poetics'
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
