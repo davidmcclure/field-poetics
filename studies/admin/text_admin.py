@@ -11,8 +11,6 @@ class TextAdmin(admin.ModelAdmin):
         Don't allow edits to the markup after creation.
         """
 
-        if obj:
-            return self.readonly_fields + ('markup',)
-
-        else:
-            return self.readonly_fields
+        return self.readonly_fields + (
+            ('markup',) if obj else ()
+        )
