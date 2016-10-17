@@ -2,6 +2,7 @@
 
 import random
 
+from typing import List
 from django.db import models
 
 from bs4 import BeautifulSoup
@@ -43,27 +44,10 @@ class Study(models.Model):
 
         super().save(*args, **kwargs)
 
-    def randomized_text(self):
+    def conditions(self) -> str:
 
         """
-        Randomly select a single condition.
-
-        Returns: (condition, text)
+        Draw a random condition key.
         """
 
-        # TODO: test
-
-        tree = BeautifulSoup(self.text)
-
-        conditions = tree.select('[data-condition]')
-
-        random.shuffle(conditions)
-
-        # Select condition.
-        condition = conditions.pop()
-
-        # Remove other conditions.
-        for cond in conditions:
-            cond.extract()
-
-        return condition.attrs['data-condition'], str(tree)
+        pass
