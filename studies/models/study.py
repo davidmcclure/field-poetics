@@ -51,6 +51,8 @@ class Study(models.Model):
         Returns: (condition, text)
         """
 
+        # TODO: test
+
         tree = BeautifulSoup(self.text)
 
         conditions = tree.select('[data-condition]')
