@@ -2,8 +2,6 @@
 
 from django.contrib import admin
 
-from studies.models import Text
-
 
 class TextAdmin(admin.ModelAdmin):
 
@@ -18,6 +16,3 @@ class TextAdmin(admin.ModelAdmin):
 
         else:
             return self.readonly_fields
-
-
-admin.site.register(Text, TextAdmin)
