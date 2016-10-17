@@ -2,11 +2,9 @@
 
 from django.contrib import admin
 
-from studies.models import Text
 from studies.models import Study
 
-from .text_admin import TextAdmin
+from .study_admin import StudyAdmin
 
 
-admin.site.register(Text, TextAdmin)
-admin.site.register(Study)
+admin.site.register(Study, StudyAdmin)
