@@ -1,5 +1,7 @@
 
 
+import random
+
 from django.db import models
 
 from bs4 import BeautifulSoup
@@ -40,3 +42,26 @@ class Study(models.Model):
             self.text = str(tree)
 
         super().save(*args, **kwargs)
+
+    def randomized_text(self):
+
+        """
+        Randomly select a single condition.
+
+        Returns: (condition, text)
+        """
+
+        tree = BeautifulSoup(self.text)
+
+        conditions = tree.select('[data-condition]')
+
+        random.shuffle(conditions)
+
+        # Select condition.
+        condition = conditions.pop()
+
+        # Remove other conditions.
+        for cond in conditions:
+            cond.extract()
+
+        return condition.attrs['data-condition'], str(tree)
