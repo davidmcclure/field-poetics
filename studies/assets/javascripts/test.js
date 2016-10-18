@@ -2,7 +2,7 @@
 
 import _ from 'lodash';
 
-require('./test.scss');
+import './test.scss';
 
 
-console.log(_);
+console.log('test');
