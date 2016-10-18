@@ -44,10 +44,23 @@ class Study(models.Model):
 
         super().save(*args, **kwargs)
 
-    def conditions(self) -> str:
+    def conditions(self) -> List[str]:
+
+        """
+        Get a list of conditions.
+        """
+
+        tree = BeautifulSoup(self.text)
+
+        return [
+            tag.attrs['data-condition']
+            for tag in tree.select('[data-condition]')
+        ]
+
+    def random_condition(self) -> str:
 
         """
         Draw a random condition key.
         """
 
-        pass
+        return random.choice(self.conditions())
