@@ -3,6 +3,10 @@
 
 {% load staticfiles %}
 
+{% block js %}
+<script src="{% static "studies/test.js" %}"></script>
+{% endblock %}
+
 {% block content %}
 <h1>{{ study.text|safe }}</h1>
 {% endblock %}
