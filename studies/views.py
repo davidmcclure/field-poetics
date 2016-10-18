@@ -11,4 +11,6 @@ def text(request, slug):
     Mark the text.
     """
 
-    return render(request, 'studies/text.html')
+    study = Study.objects.get(slug=slug)
+
+    return render(request, 'studies/text.html', dict(study=study))

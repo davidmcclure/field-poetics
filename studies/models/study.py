@@ -63,4 +63,6 @@ class Study(models.Model):
         Draw a random condition key.
         """
 
-        return random.choice(self.conditions())
+        conditions = self.conditions()
+
+        return random.choice(conditions) if conditions else None
