@@ -3,3 +3,4 @@
 
 ipython
 pytest-django
+factory_boy

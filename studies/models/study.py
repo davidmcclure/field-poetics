@@ -18,6 +18,8 @@ class Study(models.Model):
         unique=True,
     )
 
+    # TODO: Rename to markup? Make required?
+
     text = models.TextField()
 
     class Meta:

@@ -4,7 +4,7 @@ import pytest
 
 from bs4 import BeautifulSoup
 
-from studies.models import Study
+from studies.tests.factories import StudyFactory
 
 
 pytestmark = pytest.mark.django_db
@@ -22,8 +22,7 @@ def test_write_ids():
     <span class="taggable">w3</span>
     '''
 
-    # TODO: FactoryBoy
-    study = Study.objects.create(name='Study', text=text)
+    study = StudyFactory(text=text)
 
     study.refresh_from_db()
 
