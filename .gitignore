@@ -91,3 +91,6 @@ ENV/
 
 # Field poetics
 *.sqlite3
+
+# Node
+node_modules

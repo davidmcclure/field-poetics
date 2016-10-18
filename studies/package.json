@@ -1,0 +1,10 @@
+{
+  "name": "field-poetics",
+  "version": "1.0.0",
+  "description": "How do people read?",
+  "author": "David McClure",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^1.13.2"
+  }
+}
