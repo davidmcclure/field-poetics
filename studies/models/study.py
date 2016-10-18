@@ -56,13 +56,3 @@ class Study(models.Model):
             tag.attrs['data-condition']
             for tag in tree.select('[data-condition]')
         ]
-
-    def random_condition(self) -> str:
-
-        """
-        Draw a random condition key.
-        """
-
-        conditions = self.conditions()
-
-        return random.choice(conditions) if conditions else None
